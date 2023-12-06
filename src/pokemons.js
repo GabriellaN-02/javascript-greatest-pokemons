@@ -23,11 +23,30 @@ function candyAverage(pokemons) {
   if (pokemons.length === 0) {
     return 0;
   }
+
+  const totalCandy = pokemons.reduce((sum, pokemon) => sum + parseFloat(pokemon.candy_count || 0), 0);
+  const averageCandy = totalCandy / pokemons.length;
+  return Math.round(averageCandy * 100) / 100;
 }
 // Iteration 4: images for the first 10 `Ground`  Pokemons
-
+function getGroundPokeImg(pokemons) {
+  if (pokemons.length === 0) {
+    return 0;
+  }
+  const groundpokemon = pokemons.filter((pokemon) => pokemon.type.includes("Ground"));
+  const groundpokemonimg = groundpokemon.map((pokemon) => pokemon.img).slice(0, 10);
+  return groundpokemonimg;
+}
 // Iteration 5: Find all pokemon names heavier than Pikachu
-
+function getHeavyPokemons(pokemons) {
+  if (pokemons.length === 0) {
+    return 0;
+  }
+  const pikachuWeight = parseFloat(pokemons.find((pokemon) => pokemon.name === "Pikachu").weight);
+  const heavyPokemons = pokemons.filter((pokemon) => parseFloat(pokemon.weight) > pikachuWeight);
+  const heavyPokemonsName = heavyPokemons.map((pokemon) => pokemon.name);
+  return heavyPokemonsName;
+}
 // Iteration 6: Alphabetic Order - Order by name and print the first 20 names
 
 // Iteration 7: Strong pokemons - return an array of first 15 pokemons, that have just one `weakness`. If there are less that 15, return all of them
