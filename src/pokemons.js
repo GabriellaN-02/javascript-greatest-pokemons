@@ -54,3 +54,8 @@ function orderAlphabetically(pokemons) {
   return first20Pokemons.map((pokemon) => pokemon.name);
 }
 // Iteration 7: Strong pokemons - return an array of first 15 pokemons, that have just one `weakness`. If there are less that 15, return all of them
+function strongPokemons(pokemons) {
+  const filteredPokemons = pokemons.filter((pokemon) => pokemon.weaknesses.length === 1).slice(0, 15);
+
+  return filteredPokemons.map((pokemon) => pokemon.name);
+}
