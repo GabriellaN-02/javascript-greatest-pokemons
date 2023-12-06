@@ -19,7 +19,11 @@ function shortestPokemon(pokemons) {
 }
 
 // Iteration 3: candy_count average - average of `candy_count` for all the pokemons
-
+function candyAverage(pokemons) {
+  if (pokemons.length === 0) {
+    return 0;
+  }
+}
 // Iteration 4: images for the first 10 `Ground`  Pokemons
 
 // Iteration 5: Find all pokemon names heavier than Pikachu
