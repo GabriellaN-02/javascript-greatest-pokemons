@@ -1,4 +1,8 @@
 // Iteration 1: All Fire Pokemons- get the array of all Fire type pokemons
+function getAllFirePokemons(pokemons) {
+  let firePokemons = pokemons.filter((pokemon) => pokemon.type.includes("Fire"));
+  return firePokemons;
+}
 
 // Iteration 2: Shortest Pokemon- find the `name` of the shortest pokemon
 
@@ -10,4 +14,4 @@
 
 // Iteration 6: Alphabetic Order - Order by name and print the first 20 names
 
-// Iteration 7: Strong pokemons - return an array of first 15 pokemons, that have just one `weakness`. If there are less that 15, return all of them 
+// Iteration 7: Strong pokemons - return an array of first 15 pokemons, that have just one `weakness`. If there are less that 15, return all of them
